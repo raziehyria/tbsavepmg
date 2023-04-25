@@ -101,4 +101,4 @@ for file in os.listdir():
     if extension == ".pgm":
         new_file = "{}.png".format(filename)
         with Image.open(file) as im:
-            im.save(convertedPGM)
+            im.save(new_file)
