@@ -1,4 +1,8 @@
 import os
+import os
+from PIL import Image
+
+
 #pip install matplotlib
 import matplotlib.pyplot as plt
 s1 = []
@@ -91,3 +95,10 @@ header.append(s)
 filename = "Croppedmap.pgm"
 with open(os.path.join(filename), 'w') as pgmf:
     pgmf.writelines(header)
+    
+for file in os.listdir():
+    filename, extension  = os.path.splitext(file)
+    if extension == ".pgm":
+        new_file = "{}.png".format(filename)
+        with Image.open(file) as im:
+            im.save(convertedPGM)
